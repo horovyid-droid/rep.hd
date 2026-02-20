@@ -1,11 +1,63 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>LR1 Smoke Check</title>
+    <title>Каталог ресурсів - Варіант 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <h1>Smoke check OK</h1>
-    <p>Проєкт працює.</p>
+    <div class="container">
+        <h1>Каталог навчальних ресурсів</h1>
+
+        <form id="resource-form">
+            <div class="form-group">
+                <label>Назва (Title):</label>
+                <input type="text" id="res-title" placeholder="Введіть назву ресурсу" required>
+            </div>
+
+            <div class="form-group">
+                <label>Посилання (URL):</label>
+                <input type="url" id="res-url" placeholder="https://example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Тип (Type):</label>
+                <select id="res-type">
+                    <option value="Стаття">Стаття</option>
+                    <option value="Відео">Відео</option>
+                    <option value="Книга">Книга</option>
+                    <option value="Курс">Курс</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Автор (Author):</label>
+                <input type="text" id="res-author" placeholder="Прізвище автора" required>
+            </div>
+
+            <div class="form-group">
+                <label>Опис (Description):</label>
+                <textarea id="res-description" rows="3" placeholder="Коротко про що ресурс"></textarea>
+            </div>
+
+            <button type="submit" id="add-btn">Додати ресурс</button>
+        </form>
+
+        <hr>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Назва та Опис</th>
+                    <th>Автор</th>
+                    <th>Тип</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
