@@ -2,9 +2,9 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Каталог ресурсів - Варіант 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог навчальних ресурсів - Баку</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -12,32 +12,33 @@
 
         <form id="resource-form">
             <div class="form-group">
-                <label>Назва (Title):</label>
+                <label for="res-title">Назва (Title):</label>
                 <input type="text" id="res-title" placeholder="Введіть назву ресурсу" required>
             </div>
 
             <div class="form-group">
-                <label>Посилання (URL):</label>
+                <label for="res-url">Посилання (URL):</label>
                 <input type="url" id="res-url" placeholder="https://example.com" required>
             </div>
 
             <div class="form-group">
-                <label>Тип (Type):</label>
+                <label for="res-type">Тип (Type):</label>
                 <select id="res-type">
                     <option value="Стаття">Стаття</option>
                     <option value="Відео">Відео</option>
                     <option value="Книга">Книга</option>
                     <option value="Курс">Курс</option>
+                    <option value="Документація">Документація</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label>Автор (Author):</label>
+                <label for="res-author">Автор (Author):</label>
                 <input type="text" id="res-author" placeholder="Прізвище автора" required>
             </div>
 
             <div class="form-group">
-                <label>Опис (Description):</label>
+                <label for="res-description">Опис (Description):</label>
                 <textarea id="res-description" rows="3" placeholder="Коротко про що ресурс"></textarea>
             </div>
 
@@ -49,6 +50,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Назва та Опис</th>
                     <th>Автор</th>
                     <th>Тип</th>
@@ -59,5 +61,12 @@
             </tbody>
         </table>
     </div>
+
+    <script src="models/ResourceDto.js"></script>
+
+    <script src="services/ResourceService.js"></script>
+
+    <script src="scripts/main.js"></script>
+
 </body>
 </html>

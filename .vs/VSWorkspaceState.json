@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\beckend",
+    "\\beckend\\controllers",
+    "\\beckend\\models",
+    "\\beckend\\routes",
+    "\\frontend",
+    "\\frontend\\models",
+    "\\frontend\\scripts",
+    "\\frontend\\services"
+  ],
+  "SelectedNode": "\\beckend\\.gitignore",
+  "PreviewInSolutionExplorer": false
+}
