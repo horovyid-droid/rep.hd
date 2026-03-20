@@ -13,7 +13,7 @@ class ResourceResponseDto {
 
 class CreateResourceRequestDto {
     constructor(data) {
-        this.title = data.title || data.name; 
+        this.title = data.title || data.name;
         this.url = data.url;
         this.type = data.type;
     }
