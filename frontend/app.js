@@ -40,3 +40,5 @@ window.deleteItem = (index) => {
     resources.splice(index, 1);
     render();
 };
+
+    

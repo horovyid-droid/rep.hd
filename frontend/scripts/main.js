@@ -1,22 +1,56 @@
-﻿
-async function deleteResource(id) {
+﻿async function deleteResource(id) {
     if (confirm(`Ви впевнені, що хочете видалити ресурс №${id}?`)) {
-        await resourceService.deleteResource(id); 
-        await renderTable(); 
+        await resourceService.deleteResource(id);
+        await renderTable();
     }
 }
 
+let columnName = null;
+
+
+async function updateStatistics() {
+    const statsDiv = document.getElementById('stats-display');
+    if (!statsDiv) return;
+
+    try {
+        const response = await fetch('http://localhost:3000/api/resources/count-by-type');
+        const result = await response.json();
+
+        if (result.success) {
+            const stats = result.stats;
+           
+            statsDiv.innerHTML = Object.entries(stats)
+                .map(([type, count]) => `<span><strong>${type}:</strong> ${count}</span>`)
+                .join(' | ');
+        }
+    } catch (error) {
+        console.error("Помилка оновлення статистики:", error);
+    }
+}
 
 async function renderTable() {
     const tbody = document.getElementById('table-body');
     if (!tbody) return;
 
-    
     const resources = await resourceService.getAllResources();
+
+    
+    await updateStatistics();
 
     tbody.innerHTML = '';
 
-    resources.forEach(res => {
+    const items = resources.slice();
+    items.sort((a, b) => {
+        if (!columnName) return a.id - b.id;
+
+        const aValue = a[columnName];
+        const bValue = b[columnName];
+
+        
+        return aValue < bValue ? 1 : aValue > bValue ? -1 : 0;
+    });
+
+    items.forEach(res => {
         const row = `
             <tr>
                 <td>${res.id}</td>
@@ -39,8 +73,7 @@ async function renderTable() {
     });
 }
 
-
-document.getElementById('resource-form').addEventListener('submit', async function (e) {
+document.getElementById('resource-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
     const dto = new CreateResourceRequestDto(
@@ -51,10 +84,24 @@ document.getElementById('resource-form').addEventListener('submit', async functi
         document.getElementById('res-description').value
     );
 
-    await resourceService.addResource(dto); 
-    await renderTable(); 
+    await resourceService.addResource(dto);
+    await renderTable();
     this.reset();
 });
 
 
 renderTable();
+
+
+const tableHeader = document.getElementById('tableHeader');
+if (tableHeader) {
+    tableHeader.addEventListener('click', (event) => {
+        const target = event.target;
+        const localColumnName = target.dataset.columnname;
+
+        if (localColumnName) {
+            columnName = localColumnName;
+            renderTable();
+        }
+    });
+}

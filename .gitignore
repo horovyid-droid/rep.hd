@@ -1,0 +1,6 @@
+.vs/
+beckend/node_modules/
+beckend/data/*.db
+node_modules/
+bin/
+obj/

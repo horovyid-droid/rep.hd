@@ -2,7 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\beckend",
-    "\\beckend\\controllers",
+    "\\beckend\\data",
+    "\\beckend\\database",
     "\\beckend\\models",
     "\\beckend\\routes",
     "\\frontend",
@@ -10,6 +11,6 @@
     "\\frontend\\scripts",
     "\\frontend\\services"
   ],
-  "SelectedNode": "\\frontend\\scripts\\main.js",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

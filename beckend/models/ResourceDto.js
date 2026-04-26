@@ -4,8 +4,7 @@ class ResourceResponseDto {
         this.id = id;
         this.title = title;
         this.url = url;
-        this.type = type || "unknown";
-        this.author = author || "anonymous";
+        this.type = type || "unknown";      this.author = author || "anonymous";
         this.description = description || "";
     }
 }

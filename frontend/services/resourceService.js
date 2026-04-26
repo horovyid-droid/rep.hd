@@ -1,7 +1,30 @@
 class ResourceService {
     constructor() {
-        this.resources = [];
-        this.counter = 1;
+        this.resources = [
+            new ResourceResponseDto(
+                1,
+                'title 1',
+                'http://localhost',
+                '',
+                'qweqwe',
+                'asdasdasdasd'
+            ),
+            new ResourceResponseDto(
+                2,
+                'title 2',
+                'http://localhost',
+                '',
+                'asdasdasd',
+                'zxczxczx'
+            ), new ResourceResponseDto(
+                3,
+                'title 3',
+                'http://localhost',
+                '',
+                'zxczxczxxcz',
+                'qweqweqweqw'
+            ),];
+        this.counter = 4;
     }
 
     addResource(dto) {
