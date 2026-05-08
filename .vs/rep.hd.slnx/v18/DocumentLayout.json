@@ -3,48 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\controllers\\resourceController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\controllers\\resourceController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\seed.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\seed.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\ResourceDto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\models\\ResourceDto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\database\\db.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\database\\db.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\routes\\resourceRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\routes\\resourceRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\app.js||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\app.js||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\scripts\\main.js||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\scripts\\main.js||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\services\\resourceService.js||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\services\\resourceService.js||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\scripts\\main.js||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\scripts\\main.js||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\app.js||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\app.js||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\UserDto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -59,8 +39,28 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\models\\resourceDto.js||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\services\\resourceService.js||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\services\\resourceService.js||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\routes\\resourceRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\routes\\resourceRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:frontend\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\controllers\\resourceController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\controllers\\resourceController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\seed.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\seed.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\database\\db.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:beckend\\database\\db.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\.gitkeep.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -82,8 +82,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\app.js",
+              "RelativeDocumentMoniker": "frontend\\app.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\app.js",
+              "RelativeToolTip": "frontend\\app.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-10T06:53:08.311Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "resourceRoutes.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\routes\\resourceRoutes.js",
+              "RelativeDocumentMoniker": "beckend\\routes\\resourceRoutes.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\routes\\resourceRoutes.js",
+              "RelativeToolTip": "beckend\\routes\\resourceRoutes.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-24T09:46:45.506Z",
+              "IsPinned": true
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -91,31 +117,126 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-04-26T16:16:47.668Z",
+              "Title": "ResourceDto.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\ResourceDto.js",
+              "RelativeDocumentMoniker": "beckend\\models\\ResourceDto.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\ResourceDto.js",
+              "RelativeToolTip": "beckend\\models\\ResourceDto.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-20T17:55:19.289Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "db.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\database\\db.js",
-              "RelativeDocumentMoniker": "beckend\\database\\db.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\database\\db.js",
-              "RelativeToolTip": "beckend\\database\\db.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "resourceDto.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\models\\resourceDto.js",
+              "RelativeDocumentMoniker": "frontend\\models\\resourceDto.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\models\\resourceDto.js",
+              "RelativeToolTip": "frontend\\models\\resourceDto.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-26T09:21:48.809Z"
+              "WhenOpened": "2026-03-20T14:48:02.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\package.json",
+              "RelativeDocumentMoniker": "beckend\\package.json",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\package.json",
+              "RelativeToolTip": "beckend\\package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-24T06:18:23.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\.gitignore",
+              "RelativeDocumentMoniker": "beckend\\.gitignore",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\.gitignore",
+              "RelativeToolTip": "beckend\\.gitignore",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-20T19:54:07.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDto.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\UserDto.js",
+              "RelativeDocumentMoniker": "beckend\\models\\UserDto.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\UserDto.js",
+              "RelativeToolTip": "beckend\\models\\UserDto.js",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-20T17:54:48.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "app.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\app.js",
+              "RelativeDocumentMoniker": "beckend\\app.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\app.js",
+              "RelativeToolTip": "beckend\\app.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-20T18:00:58.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\scripts\\main.js",
+              "RelativeDocumentMoniker": "frontend\\scripts\\main.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\scripts\\main.js",
+              "RelativeToolTip": "frontend\\scripts\\main.js",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAAAIMAAACgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-20T14:49:39.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "resourceService.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\services\\resourceService.js",
+              "RelativeDocumentMoniker": "frontend\\services\\resourceService.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\services\\resourceService.js",
+              "RelativeToolTip": "frontend\\services\\resourceService.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-20T14:49:06.695Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\index.html",
+              "RelativeDocumentMoniker": "frontend\\index.html",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\index.html",
+              "RelativeToolTip": "frontend\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-03-20T20:23:47.169Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "resourceController.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\controllers\\resourceController.js",
+              "RelativeDocumentMoniker": "beckend\\controllers\\resourceController.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\controllers\\resourceController.js",
+              "RelativeToolTip": "beckend\\controllers\\resourceController.js",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAAIAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-24T09:51:42.474Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "seed.js",
               "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\seed.js",
               "RelativeDocumentMoniker": "beckend\\seed.js",
@@ -127,148 +248,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "resourceController.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\controllers\\resourceController.js",
-              "RelativeDocumentMoniker": "beckend\\controllers\\resourceController.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\controllers\\resourceController.js",
-              "RelativeToolTip": "beckend\\controllers\\resourceController.js",
-              "ViewState": "AgIAACQAAAAAAAAAAADwvwYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "db.js",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\database\\db.js",
+              "RelativeDocumentMoniker": "beckend\\database\\db.js",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\database\\db.js",
+              "RelativeToolTip": "beckend\\database\\db.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-24T09:51:42.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "resourceRoutes.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\routes\\resourceRoutes.js",
-              "RelativeDocumentMoniker": "beckend\\routes\\resourceRoutes.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\routes\\resourceRoutes.js",
-              "RelativeToolTip": "beckend\\routes\\resourceRoutes.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-24T09:46:45.506Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "app.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\app.js",
-              "RelativeDocumentMoniker": "frontend\\app.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\app.js",
-              "RelativeToolTip": "frontend\\app.js",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-04-10T06:53:08.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ResourceDto.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\ResourceDto.js",
-              "RelativeDocumentMoniker": "beckend\\models\\ResourceDto.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\ResourceDto.js",
-              "RelativeToolTip": "beckend\\models\\ResourceDto.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T17:55:19.289Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "resourceDto.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\models\\resourceDto.js",
-              "RelativeDocumentMoniker": "frontend\\models\\resourceDto.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\models\\resourceDto.js",
-              "RelativeToolTip": "frontend\\models\\resourceDto.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T14:48:02.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "package.json",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\package.json",
-              "RelativeDocumentMoniker": "beckend\\package.json",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\package.json",
-              "RelativeToolTip": "beckend\\package.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-24T06:18:23.937Z"
+              "WhenOpened": "2026-04-26T09:21:48.809Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\.gitignore",
-              "RelativeDocumentMoniker": "beckend\\.gitignore",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\.gitignore",
-              "RelativeToolTip": "beckend\\.gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-20T19:54:07.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserDto.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\UserDto.js",
-              "RelativeDocumentMoniker": "beckend\\models\\UserDto.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\models\\UserDto.js",
-              "RelativeToolTip": "beckend\\models\\UserDto.js",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T17:54:48.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "app.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\app.js",
-              "RelativeDocumentMoniker": "beckend\\app.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\beckend\\app.js",
-              "RelativeToolTip": "beckend\\app.js",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEUAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T18:00:58.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "main.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\scripts\\main.js",
-              "RelativeDocumentMoniker": "frontend\\scripts\\main.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\scripts\\main.js",
-              "RelativeToolTip": "frontend\\scripts\\main.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T14:49:39.877Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\index.html",
-              "RelativeDocumentMoniker": "frontend\\index.html",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\index.html",
-              "RelativeToolTip": "frontend\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2026-03-20T20:23:47.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "resourceService.js",
-              "DocumentMoniker": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\services\\resourceService.js",
-              "RelativeDocumentMoniker": "frontend\\services\\resourceService.js",
-              "ToolTip": "C:\\Users\\denys\\Documents\\GitHub\\rep.hd\\frontend\\services\\resourceService.js",
-              "RelativeToolTip": "frontend\\services\\resourceService.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-20T14:49:06.695Z"
+              "WhenOpened": "2026-04-26T16:16:47.668Z"
             },
             {
               "$type": "Document",
@@ -305,6 +305,10 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2026-03-20T17:58:56.249Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
             }
           ]
         }

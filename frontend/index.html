@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог навчальних ресурсів - Баку</title>
+    <title>Каталог навчальних ресурсів</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Каталог навчальних ресурсів</h1>
+        <header>
+            <h1>Каталог навчальних ресурсів</h1>
+            <div id="connection-status" style="font-size: 0.8em; margin-bottom: 10px; color: #666;">
+                Статус сервера: <span id="status-badge">перевірка...</span>
+            </div>
+        </header>
+
+        <div id="notice" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 4px; text-align: center;"></div>
 
         <form id="resource-form">
             <div class="form-group">
@@ -24,11 +31,11 @@
             <div class="form-group">
                 <label for="res-type">Тип (Type):</label>
                 <select id="res-type">
-                    <option value="Стаття">Стаття</option>
-                    <option value="Відео">Відео</option>
-                    <option value="Книга">Книга</option>
-                    <option value="Курс">Курс</option>
-                    <option value="Документація">Документація</option>
+                    <option value="Стаття">Стаття 📄</option>
+                    <option value="Відео">Відео 🎬</option>
+                    <option value="Книга">Книга 📚</option>
+                    <option value="Курс">Курс 🎓</option>
+                    <option value="Документація">Документація 🛠️</option>
                 </select>
             </div>
 
@@ -42,32 +49,34 @@
                 <textarea id="res-description" rows="3" placeholder="Коротко про що ресурс"></textarea>
             </div>
 
-            <button type="submit" id="add-btn">Додати ресурс</button>
+            <button type="submit" id="add-btn">Додати до каталогу</button>
         </form>
 
         <hr>
 
-        <div id="stats-display" style="padding: 15px; background: #f8f9fa; margin: 15px 0; border-radius: 8px; border: 1px solid #dee2e6; display: flex; gap: 20px; font-family: sans-serif; font-size: 14px; color: #333;">
-            <strong>Статистика:</strong> завантаження...
+        <div id="stats-display" style="margin-bottom: 15px; padding: 12px; background: #eef6ff; border-left: 4px solid #007bff; border-radius: 4px;">
+            <strong>📊 Статистика ресурсів:</strong> <span id="stats-content">завантаження...</span>
         </div>
 
-        <table>
-            <thead id="tableHeader">
-                <tr>
-                    <th data-columnName="id" style="cursor: pointer;">ID ⬍</th>
-                    <th data-columnName="title" style="cursor: pointer;">Назва та Опис ⬍</th>
-                    <th data-columnName="author" style="cursor: pointer;">Автор ⬍</th>
-                    <th data-columnName="type" style="cursor: pointer;">Тип ⬍</th>
-                    <th>Дії</th>
-                </tr>
-            </thead>
-            <tbody id="table-body">
-            </tbody>
-        </table>
+        <div id="listStatus" style="text-align: center; margin: 20px 0; font-weight: bold; font-size: 1.1em; color: #555;"></div>
+
+        <div id="listContainer">
+            <table>
+                <thead id="tableHeader">
+                    <tr>
+                        <th data-columnname="id" style="cursor: pointer; width: 60px;">ID ⬍</th>
+                        <th data-columnname="title" style="cursor: pointer;">Назва та Опис ⬍</th>
+                        <th data-columnname="author" style="cursor: pointer;">Автор ⬍</th>
+                        <th data-columnname="type" style="cursor: pointer; width: 120px;">Тип ⬍</th>
+                        <th style="width: 100px;">Дії</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <script src="models/ResourceDto.js"></script>
-    <script src="services/ResourceService.js"></script>
-    <script src="scripts/main.js"></script>
+    <script type="module" src="scripts/main.js"></script>
 </body>
 </html>

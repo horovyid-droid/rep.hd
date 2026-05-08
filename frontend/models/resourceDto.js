@@ -1,4 +1,4 @@
-// Модель для створення
+п»ї
 class CreateResourceRequestDto {
     constructor(title, url, type, author, description) {
         this.title = title;
@@ -9,7 +9,7 @@ class CreateResourceRequestDto {
     }
 }
 
-// Модель для оновлення
+
 class UpdateResourceRequestDto {
     constructor(title, url, type, author, description) {
         this.title = title;
@@ -20,7 +20,7 @@ class UpdateResourceRequestDto {
     }
 }
 
-// Модель для відповіді
+
 class ResourceResponseDto {
     constructor(id, title, url, type, author, description) {
         this.id = id;

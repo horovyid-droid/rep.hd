@@ -1,62 +1,84 @@
-class ResourceService {
+﻿class ResourceService {
     constructor() {
-        this.resources = [
-            new ResourceResponseDto(
-                1,
-                'title 1',
-                'http://localhost',
-                '',
-                'qweqwe',
-                'asdasdasdasd'
-            ),
-            new ResourceResponseDto(
-                2,
-                'title 2',
-                'http://localhost',
-                '',
-                'asdasdasd',
-                'zxczxczx'
-            ), new ResourceResponseDto(
-                3,
-                'title 3',
-                'http://localhost',
-                '',
-                'zxczxczxxcz',
-                'qweqweqweqw'
-            ),];
-        this.counter = 4;
+        
+        this.baseUrl = 'http://localhost:3000/api/v1/resources';
     }
 
-    addResource(dto) {
-        const newRes = new ResourceResponseDto(
-            this.counter++,
-            dto.title,
-            dto.url,
-            dto.type,
-            dto.author,
-            dto.description
-        );
-        this.resources.push(newRes);
-        return newRes;
-    }
+    /**
+     *  (GET)
+     */
+    async getAllResources() {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 3000);
 
-    getAllResources() {
-        return this.resources;
-    }
+        try {
+            const response = await fetch(this.baseUrl, { signal: controller.signal });
+            clearTimeout(timeoutId);
 
-    deleteResource(id) {
-        this.resources = this.resources.filter(res => res.id !== id);
-    }
+            if (!response.ok) {
+                throw new Error(`Сервер повернув помилку: ${response.status}`);
+            }
 
-    updateResource(id, updateDto) {
-        const index = this.resources.findIndex(res => res.id === id);
-        if (index !== -1) {
-            this.resources[index] = { ...this.resources[index], ...updateDto };
-            return this.resources[index];
+            return await response.json();
+        } catch (error) {
+            console.error('Сервіс: помилка при отриманні:', error);
+
+            let friendlyMessage = "Помилка зв'язку з сервером";
+
+            if (error.name === 'AbortError') {
+                friendlyMessage = "Сервер не відповів вчасно (Таймаут 3с).";
+            } else if (error instanceof TypeError || error.message.includes('fetch')) {
+                friendlyMessage = "Бекенд недоступний. Запустіть сервер (node app.js)";
+            } else {
+                friendlyMessage = error.message;
+            }
+
+            throw new Error(friendlyMessage);
         }
-        return null;
+    }
+
+    /**
+     * (POST)
+     */
+    async addResource(dto) {
+        try {
+            const response = await fetch(this.baseUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dto)
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error?.message || `Помилка додавання (${response.status})`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            console.error('Сервіс: помилка при додаванні:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * (DELETE)
+     */
+    async deleteResource(id) {
+        try {
+            const response = await fetch(`${this.baseUrl}/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (!response.ok) {
+                throw new Error(`Не вдалося видалити (ID: ${id})`);
+            }
+
+            return true;
+        } catch (error) {
+            console.error('Сервіс: помилка при видаленні:', error);
+            throw error;
+        }
     }
 }
 
-// ��������� ��������� ������ ������ ���
-const resourceService = new ResourceService();
+export const resourceService = new ResourceService();
