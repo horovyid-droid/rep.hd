@@ -1,38 +1,46 @@
 const express = require('express');
+const cors = require('cors');
 const resourceRoutes = require('./routes/resourceRoutes');
 const userRoutes = require('./routes/userRoutes');
-const { initDb } = require('./database/db'); // 1. Підключаємо логіку бази
+const { initDb } = require('./database/db');
 
 const app = express();
 const PORT = 3000;
 
-// 2. Ініціалізуємо базу даних при старті
+
 initDb();
+
+
+app.use(cors({
+    origin: function (origin, callback) {
+        
+        if (!origin || origin.startsWith('http://localhost') || origin.startsWith('http://127.0.0.1')) {
+            callback(null, true);
+        } else {
+            console.log(`CORS заблокував запит з: ${origin}`);
+            callback(new Error('CORS: Origin not allowed'));
+        }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json());
 
-// Логування запитів (Middleware)
+
 app.use((req, res, next) => {
-    const start = Date.now();
-    res.on('finish', () => {
-        const duration = Date.now() - start;
-        console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} ${res.statusCode} ${duration}ms`);
-    });
+    console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.originalUrl}`);
     next();
 });
 
-// Статистика (приклад обробки даних)
-app.get('/api/resources/count-by-type', (req, res) => {
-    const data = [
-        { type: 'Стаття' }, { type: 'Відео' },
-        { type: 'Стаття' }, { type: 'Курс' },
-        { type: 'Книга' }
-    ];
 
-    const stats = {};
-    data.forEach(item => {
-        stats[item.type] = (stats[item.type] || 0) + 1;
-    });
+app.get('/api/v1/resources/count-by-type', (req, res) => {
+    const stats = {
+        'Стаття': 12,
+        'Відео': 5,
+        'Курс': 3,
+        'Книга': 7
+    };
 
     res.json({
         success: true,
@@ -40,31 +48,36 @@ app.get('/api/resources/count-by-type', (req, res) => {
     });
 });
 
-// Маршрути (Routes)
-app.use('/api/resources', resourceRoutes);
-app.use('/api/users', userRoutes);
 
-// Обробка 404 (Not Found)
+app.use('/api/v1/resources', resourceRoutes);
+app.use('/api/v1/users', userRoutes);
+
+
 app.use((req, res) => {
     res.status(404).json({
         error: {
             code: "NOT_FOUND",
-            message: "Ресурс не знайдено"
+            message: "Шлях не знайдено. Перевірте наявність /api/v1/ у запиті."
         }
     });
 });
 
-// Загальна обробка помилок
+
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    if (err.message === 'CORS: Origin not allowed') {
+        return res.status(403).json({
+            error: { code: "CORS_ERROR", message: err.message }
+        });
+    }
+    console.error(" Помилка сервера:", err.stack);
     res.status(500).json({
-        error: { code: "SERVER_ERROR", message: "Сталася помилка" }
+        error: { code: "SERVER_ERROR", message: "Сталася внутрішня помилка сервера" }
     });
 });
 
 app.listen(PORT, () => {
     console.log(`\n=========================================`);
     console.log(` СЕРВЕР ЗАПУЩЕНО: http://localhost:${PORT}`);
-    console.log(` База даних активна та готова до роботи.`);
+    console.log(` CORS: Дозволено всі порти localhost`);
     console.log(`=========================================`);
 });
