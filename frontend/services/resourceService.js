@@ -1,12 +1,27 @@
 ﻿class ResourceService {
     constructor() {
         
-        this.baseUrl = 'http://localhost:3000/api/v1/resources';
+        this.baseUrl = 'http://localhost:3001/api/v1/resources';
     }
 
-    /**
-     *  (GET)
-     */
+    
+    async getResourceStats() {
+        try {
+            const response = await fetch(`${this.baseUrl}/count-by-type`);
+
+            if (!response.ok) {
+                throw new Error(`Статистика недоступна: ${response.status}`);
+            }
+
+            const data = await response.json();
+            return data.stats; 
+        } catch (error) {
+            console.error('Сервіс: помилка при отриманні статистики:', error);
+            throw error;
+        }
+    }
+
+    
     async getAllResources() {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 3000);
@@ -37,9 +52,7 @@
         }
     }
 
-    /**
-     * (POST)
-     */
+   
     async addResource(dto) {
         try {
             const response = await fetch(this.baseUrl, {
@@ -60,9 +73,7 @@
         }
     }
 
-    /**
-     * (DELETE)
-     */
+    
     async deleteResource(id) {
         try {
             const response = await fetch(`${this.baseUrl}/${id}`, {

@@ -5,76 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог навчальних ресурсів</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .tab-button {
+            background-color: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            padding: 10px 24px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 6px;
+            margin: 0 6px;
+            transition: all 0.2s ease;
+        }
+
+            .tab-button:hover {
+                background-color: #e2e8f0;
+            }
+
+            .tab-button.active {
+                background-color: #2563eb;
+                color: white;
+                border-color: #2563eb;
+                box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+            }
+    </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Каталог навчальних ресурсів</h1>
-            <div id="connection-status" style="font-size: 0.8em; margin-bottom: 10px; color: #666;">
-                Статус сервера: <span id="status-badge">перевірка...</span>
+            <div id="connection-status">
+                Статус сервера: <span id="status-badge" class="status-checking">перевірка...</span>
             </div>
         </header>
 
-        <div id="notice" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 4px; text-align: center;"></div>
-
-        <form id="resource-form">
-            <div class="form-group">
-                <label for="res-title">Назва (Title):</label>
-                <input type="text" id="res-title" placeholder="Введіть назву ресурсу" required>
-            </div>
-
-            <div class="form-group">
-                <label for="res-url">Посилання (URL):</label>
-                <input type="url" id="res-url" placeholder="https://example.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="res-type">Тип (Type):</label>
-                <select id="res-type">
-                    <option value="Стаття">Стаття 📄</option>
-                    <option value="Відео">Відео 🎬</option>
-                    <option value="Книга">Книга 📚</option>
-                    <option value="Курс">Курс 🎓</option>
-                    <option value="Документація">Документація 🛠️</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="res-author">Автор (Author):</label>
-                <input type="text" id="res-author" placeholder="Прізвище автора" required>
-            </div>
-
-            <div class="form-group">
-                <label for="res-description">Опис (Description):</label>
-                <textarea id="res-description" rows="3" placeholder="Коротко про що ресурс"></textarea>
-            </div>
-
-            <button type="submit" id="add-btn">Додати до каталогу</button>
-        </form>
-
-        <hr>
-
-        <div id="stats-display" style="margin-bottom: 15px; padding: 12px; background: #eef6ff; border-left: 4px solid #007bff; border-radius: 4px;">
-            <strong>📊 Статистика ресурсів:</strong> <span id="stats-content">завантаження...</span>
+        <div class="tabs-container" style="text-align: center; margin: 20px 0;">
+            <button id="btn-resources" class="tab-button active">📚 Ресурси</button>
+            <button id="btn-users" class="tab-button">👥 Користувачі</button>
         </div>
 
-        <div id="listStatus" style="text-align: center; margin: 20px 0; font-weight: bold; font-size: 1.1em; color: #555;"></div>
+        <div id="notice" style="display: none;"></div>
 
-        <div id="listContainer">
-            <table>
-                <thead id="tableHeader">
-                    <tr>
-                        <th data-columnname="id" style="cursor: pointer; width: 60px;">ID ⬍</th>
-                        <th data-columnname="title" style="cursor: pointer;">Назва та Опис ⬍</th>
-                        <th data-columnname="author" style="cursor: pointer;">Автор ⬍</th>
-                        <th data-columnname="type" style="cursor: pointer; width: 120px;">Тип ⬍</th>
-                        <th style="width: 100px;">Дії</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body">
-                </tbody>
-            </table>
+        <div id="section-resources">
+            <section id="stats-display" class="stats-container">
+                <div class="stats-header">
+                    <strong>📊 Статистика ресурсів</strong>
+                </div>
+                <div id="stats-content" class="stats-grid">
+                    <span>Завантаження даних...</span>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <form id="resource-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-title">Назва (Title):</label>
+                            <input type="text" id="res-title" placeholder="Наприклад: Основи Кібербезпеки" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-author">Автор (Author):</label>
+                            <input type="text" id="res-author" placeholder="Прізвище або нікнейм" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-url">Посилання (URL):</label>
+                            <input type="url" id="res-url" placeholder="https://example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="res-type">Тип (Type):</label>
+                            <select id="res-type">
+                                <option value="Стаття">Стаття 📄</option>
+                                <option value="Відео">Відео 🎬</option>
+                                <option value="Книга">Книга 📚</option>
+                                <option value="Курс">Курс 🎓</option>
+                                <option value="Документація">Документація 🛠️</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="res-description">Опис (Description):</label>
+                        <textarea id="res-description" rows="2" placeholder="Коротко про що цей ресурс"></textarea>
+                    </div>
+
+                    <button type="submit" id="add-btn">Додати до каталогу</button>
+                </form>
+            </section>
+
+            <hr>
+
+            <div class="table-controls">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Пошук за назвою або автором...">
+                </div>
+                <div id="listStatus"></div>
+            </div>
+
+            <div id="listContainer" class="table-responsive">
+                <table>
+                    <thead id="tableHeader">
+                        <tr>
+                            <th data-columnname="id" title="Сортувати за ID">ID ↕</th>
+                            <th data-columnname="title">Назва та Опис ↕</th>
+                            <th data-columnname="author">Автор ↕</th>
+                            <th data-columnname="type">Тип ↕</th>
+                            <th class="actions-col">Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <div id="section-users" style="display: none;">
+            <div class="table-responsive" style="margin-top: 20px;">
+                <h3 style="margin-bottom: 15px; color: #334155; text-align: center;">👥 Зареєстровані користувачі системи</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ім'я користувача (Username)</th>
+                            <th>Роль (Role)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 
     <script type="module" src="scripts/main.js"></script>
