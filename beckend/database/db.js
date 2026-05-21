@@ -24,12 +24,21 @@ function run(sql, params = []) {
     });
 }
 
-
 function get(sql, params = []) {
     return new Promise((resolve, reject) => {
         db.get(sql, params, (err, row) => {
             if (err) reject(err);
             else resolve(row);
+        });
+    });
+}
+
+
+function all(sql, params = []) {
+    return new Promise((resolve, reject) => {
+        db.all(sql, params, (err, rows) => {
+            if (err) reject(err);
+            else resolve(rows);
         });
     });
 }
@@ -66,7 +75,6 @@ const initDb = async () => {
 
         console.log("All tables (Users, Resources, Reviews) are ready!");
 
-        
         const row = await get("SELECT COUNT(*) as count FROM Users");
 
         if (row && row.count === 0) {
@@ -89,4 +97,5 @@ const initDb = async () => {
     }
 };
 
-module.exports = { db, initDb };
+
+module.exports = { db, initDb, run, get, all };

@@ -1,5 +1,6 @@
-const { UserResponseDto, CreateUserRequestDto, UpdateUserRequestDto } = require('../models/UserDto');
-const { db } = require('../database/db'); 
+const { UserResponseDto, CreateUserRequestDto } = require('../models/UserDto');
+const { db } = require('../database/db');
+
 
 exports.getAll = (req, res) => {
     const selectSql = "SELECT id, username, email FROM Users";
@@ -9,16 +10,14 @@ exports.getAll = (req, res) => {
             return res.status(500).json({ error: { message: err.message } });
         }
 
-       
         if (!rows || rows.length === 0) {
-            console.log("👉 База порожня! Додаю користувачів прямо з контролера...");
+            console.log(" База порожня! Додаю користувачів прямо з контролера...");
 
             const insertSql = `INSERT INTO Users (username, email, password) VALUES (?, ?, ?)`;
 
             db.run(insertSql, ["admin_baku", "admin@kiev.ua", "hashed_123"], () => {
                 db.run(insertSql, ["student_group11", "student11@kiev.ua", "hashed_456"], () => {
                     db.run(insertSql, ["teacher_test", "teacher@kiev.ua", "hashed_789"], () => {
-                      
                         db.all(selectSql, [], (errAfter, rowsAfter) => {
                             if (errAfter) return res.status(500).json({ error: { message: errAfter.message } });
                             const dtos = rowsAfter.map(r => new UserResponseDto(r.id, r.username, r.email));
@@ -28,12 +27,12 @@ exports.getAll = (req, res) => {
                 });
             });
         } else {
-         
             const dtos = rows.map(r => new UserResponseDto(r.id, r.username, r.email));
             res.json(dtos);
         }
     });
 };
+
 
 exports.getById = (req, res) => {
     const id = parseInt(req.params.id);
@@ -44,21 +43,24 @@ exports.getById = (req, res) => {
     });
 };
 
+
 exports.create = (req, res) => {
-    const { username, email, password } = req.body;
-    if (!username || !email) {
+  
+    const dto = new CreateUserRequestDto(req.body);
+
+    if (!dto.username || !dto.email) {
         return res.status(400).json({ error: { code: "VALIDATION_ERROR", message: "Username та Email обов'язкові" } });
     }
 
-   
-    const pwd = password || 'default_pass_123';
+    const pwd = dto.password || 'default_pass_123';
     const insertSql = `INSERT INTO Users (username, email, password) VALUES (?, ?, ?)`;
 
-    db.run(insertSql, [username, email, pwd], function (err) {
+    db.run(insertSql, [dto.username, dto.email, pwd], function (err) {
         if (err) return res.status(500).json({ error: { message: err.message } });
-        res.status(201).json(new UserResponseDto(this.lastID, username, email));
+        res.status(201).json(new UserResponseDto(this.lastID, dto.username, dto.email));
     });
 };
+
 
 exports.update = (req, res) => {
     const id = parseInt(req.params.id);
@@ -77,6 +79,7 @@ exports.update = (req, res) => {
         });
     });
 };
+
 
 exports.delete = (req, res) => {
     const id = parseInt(req.params.id);

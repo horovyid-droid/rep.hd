@@ -9,6 +9,13 @@ const sectionResources = document.getElementById('section-resources');
 const sectionUsers = document.getElementById('section-users');
 const usersTableBody = document.getElementById('users-table-body');
 
+function escapeHTML(str) {
+    if (!str) return '';
+    const p = document.createElement('p');
+    p.textContent = str;
+    return p.innerHTML;
+}
+
 function showNotice(message, isError = false) {
     const noticeEl = document.getElementById('notice');
     if (!noticeEl) return;
@@ -31,31 +38,32 @@ function updateListStatus(message, isError = false) {
     statusEl.style.display = message ? "block" : "none";
 }
 
-
 async function updateStatistics() {
     const statsContent = document.getElementById('stats-content');
     if (!statsContent) return;
 
     try {
-        const response = await fetch('http://localhost:3001/api/v1/resources/count-by-type');
+        const response = await fetch('http://localhost:3001/api/v1/resources/count');
         if (!response.ok) throw new Error(`Помилка сервера: ${response.status}`);
 
         const res = await response.json();
+      
+        const stats = res.result || res.stats || res;
 
-        if (!res.success || !res.stats || Object.keys(res.stats).length === 0) {
+        if (!stats || Object.keys(stats).length === 0) {
             statsContent.innerHTML = "<span>Наразі ресурсів немає</span>";
             return;
         }
 
-        statsContent.innerHTML = Object.entries(res.stats)
+        statsContent.innerHTML = Object.entries(stats)
             .map(([type, count]) => `
                 <div class="stat-card">
-                    <span class="stat-label">${type}</span>
-                    <span class="stat-value">${count}</span>
+                    <span class="stat-label">${escapeHTML(type)}</span>
+                    <span class="stat-value">${escapeHTML(String(count))}</span>
                 </div>
             `).join('');
     } catch (error) {
-        console.error("Помилка завантаження статистики з бекенду:", error);
+        console.error("Помилка статистики:", error);
         statsContent.innerHTML = "<span style='color: red;'>Не вдалося завантажити статистику</span>";
     }
 }
@@ -72,7 +80,6 @@ async function deleteResource(id) {
         }
     }
 }
-
 window.deleteResource = deleteResource;
 
 async function renderTable(filterText = "") {
@@ -84,15 +91,17 @@ async function renderTable(filterText = "") {
     try {
         if (!filterText && allResources.length === 0) {
             updateListStatus("Завантаження даних...");
-            allResources = await resourceService.getAllResources();
+
+           
+            const data = await resourceService.getAllResources();
+            allResources = Array.isArray(data) ? data : [];
         }
 
-        
         await updateStatistics();
 
         let displayItems = allResources.filter(res =>
-            res.title.toLowerCase().includes(filterText.toLowerCase()) ||
-            res.author.toLowerCase().includes(filterText.toLowerCase())
+            (res.title && res.title.toLowerCase().includes(filterText.toLowerCase())) ||
+            (res.author && res.author.toLowerCase().includes(filterText.toLowerCase()))
         );
 
         if (displayItems.length === 0) {
@@ -115,14 +124,14 @@ async function renderTable(filterText = "") {
 
         tbody.innerHTML = displayItems.map(res => `
             <tr>
-                <td>${res.id}</td>
+                <td>${escapeHTML(String(res.id))}</td>
                 <td>
-                    <strong>${res.title}</strong><br>
-                    <small class="res-desc">${res.description || ''}</small><br>
-                    <a href="${res.url}" target="_blank" class="res-link">Відкрити посилання</a>
+                    <strong>${escapeHTML(res.title)}</strong><br>
+                    <small class="res-desc">${escapeHTML(res.description || '')}</small><br>
+                    <a href="${escapeHTML(res.url)}" target="_blank" class="res-link">Відкрити посилання</a>
                 </td>
-                <td>${res.author || '—'}</td>
-                <td><span class="badge">${res.type}</span></td>
+                <td>${escapeHTML(res.author || '—')}</td>
+                <td><span class="badge">${escapeHTML(res.type)}</span></td>
                 <td>
                     <button class="delete-btn" onclick="deleteResource('${res.id}')">Видалити</button>
                 </td>
@@ -130,8 +139,8 @@ async function renderTable(filterText = "") {
         `).join('');
 
     } catch (error) {
-        console.error("Помилка:", error);
-        updateListStatus(`Помилка підключення до сервера`, true);
+        console.error("Помилка рендеру:", error);
+        updateListStatus(`Помилка: ${error.message}`, true);
     }
 }
 
@@ -146,7 +155,7 @@ function loadUsersList() {
         })
         .then(res => {
             usersTableBody.innerHTML = '';
-
+           
             const users = res.data || res.users || res;
 
             if (!Array.isArray(users) || users.length === 0) {
@@ -157,9 +166,9 @@ function loadUsersList() {
             users.forEach(user => {
                 const row = `
                     <tr>
-                        <td>${user.id || '-'}</td>
-                        <td><strong>${user.username || 'Без імені'}</strong></td>
-                        <td>${user.email || 'Не вказано'}</td>
+                        <td>${escapeHTML(String(user.id || '-'))}</td>
+                        <td><strong>${escapeHTML(user.username || 'Без імені')}</strong></td>
+                        <td>${escapeHTML(user.email || 'Не вказано')}</td>
                     </tr>
                 `;
                 usersTableBody.insertAdjacentHTML('beforeend', row);
@@ -167,9 +176,10 @@ function loadUsersList() {
         })
         .catch(err => {
             console.error('Помилка при отриманні користувачів:', err);
-            usersTableBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: red;">Не вдалося завантажити користувачів. Перевірте бекенд!</td></tr>';
+            usersTableBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: red;">Не вдалося завантажити користувачів.</td></tr>';
         });
 }
+
 
 if (btnResources && btnUsers && sectionResources && sectionUsers) {
     btnResources.addEventListener('click', (e) => {
@@ -186,7 +196,6 @@ if (btnResources && btnUsers && sectionResources && sectionUsers) {
         btnResources.classList.remove('active');
         sectionResources.style.display = 'none';
         sectionUsers.style.display = 'block';
-
         loadUsersList();
     });
 }
@@ -195,7 +204,6 @@ const resourceForm = document.getElementById('resource-form');
 if (resourceForm) {
     resourceForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-
         const dto = {
             title: document.getElementById('res-title').value,
             url: document.getElementById('res-url').value,

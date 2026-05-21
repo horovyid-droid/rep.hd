@@ -1,40 +1,48 @@
 ﻿class ResourceService {
     constructor() {
-        
         this.baseUrl = 'http://localhost:3001/api/v1/resources';
+        this.currentUserId = '2'; 
     }
 
-    
     async getResourceStats() {
         try {
-            const response = await fetch(`${this.baseUrl}/count-by-type`);
+            const response = await fetch(`${this.baseUrl}/count`);
 
             if (!response.ok) {
-                throw new Error(`Статистика недоступна: ${response.status}`);
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error?.message || `Статистика недоступна: ${response.status}`);
             }
 
             const data = await response.json();
-            return data.stats; 
+           
+            return data.result || {};
         } catch (error) {
             console.error('Сервіс: помилка при отриманні статистики:', error);
             throw error;
         }
     }
 
-    
-    async getAllResources() {
+    async getAllResources(searchQuery = '') {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 3000);
 
         try {
-            const response = await fetch(this.baseUrl, { signal: controller.signal });
+            const url = searchQuery
+                ? `${this.baseUrl}?search=${encodeURIComponent(searchQuery)}`
+                : this.baseUrl;
+
+            const response = await fetch(url, { signal: controller.signal });
             clearTimeout(timeoutId);
 
             if (!response.ok) {
-                throw new Error(`Сервер повернув помилку: ${response.status}`);
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error?.message || `Сервер повернув помилку: ${response.status}`);
             }
 
-            return await response.json();
+            const result = await response.json();
+
+            
+            return result.data || result;
         } catch (error) {
             console.error('Сервіс: помилка при отриманні:', error);
 
@@ -52,12 +60,14 @@
         }
     }
 
-   
     async addResource(dto) {
         try {
             const response = await fetch(this.baseUrl, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'XDemo-UserId': this.currentUserId
+                },
                 body: JSON.stringify(dto)
             });
 
@@ -73,15 +83,18 @@
         }
     }
 
-    
     async deleteResource(id) {
         try {
             const response = await fetch(`${this.baseUrl}/${id}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'XDemo-UserId': this.currentUserId
+                }
             });
 
             if (!response.ok) {
-                throw new Error(`Не вдалося видалити (ID: ${id})`);
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error?.message || `Не вдалося видалити (ID: ${id})`);
             }
 
             return true;
